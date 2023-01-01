@@ -102,4 +102,4 @@ In order to produce a uniquely identifiable distribution:
    the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string)
-   back to 0.
+   back to 0.test

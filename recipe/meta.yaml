@@ -37,6 +37,7 @@ about:
   home: https://github.com/tuxu/gwyfile
   license: MIT
   license_family: MIT
+  license_file: LICENSE.rst
   summary: 'A pure Python interface to reading and writing `Gwyddion
 <hhttp://www.gwyddion.net/>`_. files.'
   doc_url: https://github.com/tuxu/gwyfile

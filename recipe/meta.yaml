@@ -12,12 +12,13 @@ source:
 build:
   noarch: python
   number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - numpy
@@ -26,6 +27,9 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pip
+  commands:
+    - pip check
   imports:
     - gwyfile
 
@@ -33,9 +37,6 @@ about:
   home: https://github.com/tuxu/gwyfile
   license: MIT
   license_family: MIT
-  # Pull request to add license_file to the source distribution:
-  # https://github.com/tuxu/gwyfile/pull/1
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.rst'
   summary: 'A pure Python interface to reading and writing `Gwyddion
 <hhttp://www.gwyddion.net/>`_. files.'
   doc_url: https://github.com/tuxu/gwyfile

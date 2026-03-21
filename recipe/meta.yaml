@@ -1,5 +1,5 @@
 {% set name = "gwyfile" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cf72fedd6af15c952067dbbe87978a4a6262b4e2cd3aa9f2e7bee4ced4071e40
+  sha256: c12b1bab832698af554afad1e6e4f9c06b1d309b589e235a8ef365bdeef66549
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -38,8 +38,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.rst
-  summary: 'A pure Python interface to reading and writing `Gwyddion
-<hhttp://www.gwyddion.net/>`_. files.'
+  summary: 'A pure Python interface to reading and writing `Gwyddion <hhttp://www.gwyddion.net/>`_. files.'
   doc_url: https://github.com/tuxu/gwyfile
   dev_url: https://github.com/tuxu/gwyfile
 

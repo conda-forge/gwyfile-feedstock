@@ -11,18 +11,18 @@ source:
 
 build:
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=64
+    - setuptools-scm >=8
   run:
     - python >={{ python_min }}
     - numpy
-    - six
 
 test:
   requires:
@@ -30,6 +30,7 @@ test:
     - pip
   commands:
     - pip check
+    - python -c "import gwyfile; assert gwyfile.__version__ == '{{ version }}', gwyfile.__version__"
   imports:
     - gwyfile
 
